@@ -4,6 +4,8 @@ const modalImg = document.getElementById('modalImg');
 const closeBtn = document.getElementById('closeBtn');
 const searchInput = document.getElementById('searchInput');
 const searchBtn = document.getElementById('searchBtn');
+const fileInput = document.getElementById('fileInput');
+const uploadBtn = document.getElementById('uploadBtn');
 
 // 갤러리 이미지 클릭 → 모달 열기
 gallery.addEventListener('click', e => {
@@ -23,10 +25,39 @@ document.addEventListener('keydown', e => {
   if (e.key === "Escape") modal.style.display = 'none';
 });
 
-// 검색 버튼 클릭
+// 검색 기능 (alt 속성 기준 필터링)
 searchBtn.addEventListener('click', () => {
-  const query = searchInput.value.trim();
-  if(query) {
-    alert(`"${query}"로 문서를 검색합니다.`); // 실제 검색 기능 미구현
+  const query = searchInput.value.trim().toLowerCase();
+  const images = gallery.querySelectorAll('img');
+  images.forEach(img => {
+    if(img.alt.toLowerCase().includes(query)) {
+      img.style.display = '';
+    } else {
+      img.style.display = 'none';
+    }
+  });
+});
+
+// 이미지 업로드
+uploadBtn.addEventListener('click', () => {
+  const files = fileInput.files;
+  if(files.length < 10) {
+    alert('최소 10개의 이미지를 선택해야 합니다.');
+    return;
   }
+
+  Array.from(files).forEach(file => {
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = document.createElement('img');
+      img.src = e.target.result;
+      img.alt = file.name;
+      gallery.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // 선택 초기화
+  fileInput.value = '';
+  alert(`${files.length}장의 이미지를 갤러리에 추가했습니다.`);
 });

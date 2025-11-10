@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>간단 이미지 갤러리</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div>
+    <input type="text" id="searchInput" placeholder="문서 검색...">
+    <button id="searchBtn">🔍</button>
+  </div>
+  <div>갤러리 뷰어</div>
+</header>
+
+<div class="gallery" id="gallery">
+  <img src="https://picsum.photos/id/1015/300/200" alt="이미지 1">
+  <img src="https://picsum.photos/id/1016/300/200" alt="이미지 2">
+  <img src="https://picsum.photos/id/1018/300/200" alt="이미지 3">
+  <img src="https://picsum.photos/id/1020/300/200" alt="이미지 4">
+  <img src="https://picsum.photos/id/1024/300/200" alt="이미지 5">
+  <img src="https://picsum.photos/id/1027/300/200" alt="이미지 6">
+</div>
+
+<!-- 모달 -->
+<div class="modal" id="modal">
+  <span class="close-btn" id="closeBtn">&times;</span>
+  <img id="modalImg" src="" alt="뷰어 이미지">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

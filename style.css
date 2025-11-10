@@ -1,101 +1,73 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
 }
 
 header {
-  background-color: #333;
-  color: white;
+  background-color: #111;
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-header input[type="text"] {
-  padding: 5px 10px;
-  font-size: 16px;
-  border-radius: 4px;
-  border: none;
-}
-
-header button {
-  margin-left: 5px;
-  padding: 5px 10px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.upload-section {
-  padding: 10px 20px;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.upload-section p {
-  margin: 0;
+.note {
   font-size: 14px;
-  color: #555;
+  margin-left: 10px;
+  color: #bbb;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
-  padding: 20px;
-}
-
-.gallery img {
+#viewerContainer {
+  position: relative;
   width: 100%;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: transform 0.2s;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* 뷰어 모달 */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.8);
+  height: calc(100vh - 60px);
+  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  background-color: #000;
 }
 
-.modal img {
-  max-width: 90%;
+.hidden {
+  display: none;
+}
+
+#viewer img {
+  max-width: 95%;
   max-height: 90%;
-  border-radius: 6px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
 }
 
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-}
-
-.prev-btn, .next-btn {
+.nav-btn {
   position: absolute;
   top: 50%;
-  font-size: 50px;
-  color: white;
-  cursor: pointer;
-  user-select: none;
-  padding: 10px;
   transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 10px;
+  user-select: none;
+  transition: background-color 0.2s;
 }
 
-.prev-btn { left: 20px; }
-.next-btn { right: 20px; }
+.nav-btn:hover {
+  background-color: rgba(255,255,255,0.4);
+}
+
+.prev-btn { left: 40px; }
+.next-btn { right: 40px; }
+
+#pageCounter {
+  position: absolute;
+  bottom: 20px;
+  right: 50%;
+  transform: translateX(50%);
+  font-size: 18px;
+  color: #ccc;
+}

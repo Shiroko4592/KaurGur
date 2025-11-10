@@ -27,6 +27,20 @@ header button {
   cursor: pointer;
 }
 
+.upload-section {
+  padding: 10px 20px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.upload-section p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));

@@ -85,3 +85,17 @@ header button {
   color: white;
   cursor: pointer;
 }
+
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px;
+  transform: translateY(-50%);
+}
+
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }

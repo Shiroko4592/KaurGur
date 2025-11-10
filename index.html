@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>간단 이미지 갤러리</title>
+<title>갤러리 뷰어 + 업로드</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,13 +16,24 @@
   <div>갤러리 뷰어</div>
 </header>
 
+<section class="upload-section">
+  <input type="file" id="fileInput" multiple accept="image/*">
+  <button id="uploadBtn">업로드</button>
+  <p>최소 10장 선택 필요</p>
+</section>
+
 <div class="gallery" id="gallery">
+  <!-- 기본 이미지 10장 -->
   <img src="https://picsum.photos/id/1015/300/200" alt="이미지 1">
   <img src="https://picsum.photos/id/1016/300/200" alt="이미지 2">
   <img src="https://picsum.photos/id/1018/300/200" alt="이미지 3">
   <img src="https://picsum.photos/id/1020/300/200" alt="이미지 4">
   <img src="https://picsum.photos/id/1024/300/200" alt="이미지 5">
   <img src="https://picsum.photos/id/1027/300/200" alt="이미지 6">
+  <img src="https://picsum.photos/id/1033/300/200" alt="이미지 7">
+  <img src="https://picsum.photos/id/1035/300/200" alt="이미지 8">
+  <img src="https://picsum.photos/id/1037/300/200" alt="이미지 9">
+  <img src="https://picsum.photos/id/1039/300/200" alt="이미지 10">
 </div>
 
 <!-- 모달 -->
